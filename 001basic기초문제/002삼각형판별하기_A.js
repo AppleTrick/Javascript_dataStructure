@@ -7,19 +7,16 @@
 */
 
 function solution(a,b,c){
-    if(a+b > c){
-        if(a+c > b){
-            if (b+c > a) {
-                return "Yes"
-            }else{
-                return "NO"
-            }
-        }else{
-            return "NO"
-        }
-    }else{
-        return "NO"
-    }
+    let answer = "YES", max;
+    let sum = a+b+c;
+
+    if(a > b) max = a;
+    else max = b;
+    if(c > max) max = c;
+    
+    if((sum-max) <= max) answer = "NO"
+
+    return answer;
 }
 
 console.log(solution(6,7,11));

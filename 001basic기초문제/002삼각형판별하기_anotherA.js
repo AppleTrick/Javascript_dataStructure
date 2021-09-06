@@ -7,21 +7,12 @@
 */
 
 function solution(a,b,c){
-    if(a+b > c){
-        if(a+c > b){
-            if (b+c > a) {
-                return "Yes"
-            }else{
-                return "NO"
-            }
-        }else{
-            return "NO"
-        }
-    }else{
-        return "NO"
-    }
+   let max = Math.max(a,b,c);
+   let sum = a+b+c;
+   let TwoSum = sum - max;
+   return max >= TwoSum ? "NO" : "YES"
 }
 
 console.log(solution(6,7,11));
 
-console.log(solution(13,33,17));
+console.log(solution(16,33,17));
