@@ -6,8 +6,7 @@
 function solution(arr){
 
     let answer = Math.min(...arr)
-
-
+    // let answer = Math.min.apply(null, arr);
     return answer;
 }
 
