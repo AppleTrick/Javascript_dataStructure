@@ -7,15 +7,13 @@
 */
 
 function solution(str, search){
-    let answer;
     let count = 0;
-
     for (const x of str) {
-        
+        if(x === search){
+            count ++
+        }
     }
-    
-
-    return answer;
+    return count;
 }
 
 let str = "COMPUTERPROGRAMMING"
