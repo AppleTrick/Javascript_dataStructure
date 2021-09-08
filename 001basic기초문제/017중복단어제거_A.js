@@ -5,8 +5,14 @@ N개의 문자열이 입력되면 중복된 문자열은 제거하고 출력하�
 */
 
 function solution(arr){
-    let set = new Set(arr);
-    let answer = [...set]
+    let answer;
+    //console.log(arr.indexOf('time'));
+    answer = arr.filter(function(v, i){
+        if(i===arr.indexOf(v)){
+            return true;
+        }
+    });
+
     return answer;
 }
 
