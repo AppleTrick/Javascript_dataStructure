@@ -5,7 +5,7 @@ A를 #으로
 */
 // 정규식으로 하는 방법
 function solution(str){
-
+    // string 은 값이 복사 된다. 배열객체처럼 주소 참조가 되지 않는다.
     let answer = str;
     answer = answer.replace(/A/g,'#');
     return answer;
