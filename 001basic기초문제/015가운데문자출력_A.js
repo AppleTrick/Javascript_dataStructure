@@ -6,14 +6,16 @@
 
 function solution(str){
     let answer = "";
-
-    let num = str.length / 2;
-    
-    if(str.length % 2 === 0){
-        answer = answer + str[num-1] + str[num];
+    let mid = Math.floor(str.length / 2);
+    if(str.length%2 == 1){
+        // answer = str.substring(mid,mid+1);
+        answer = str.substr(mid,1);
     }else{
-        answer = str[Math.ceil(num)-1];
+        // answer = str.substring(mid-1,mid+1);
+        answer = str.substr(mid-1,2);
     }
+    
+
 
     return answer;
 }
