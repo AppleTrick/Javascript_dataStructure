@@ -14,9 +14,45 @@ M번의 수학성적이 주어지면 멘토와 멘티가 되는 짝을 만들 �
 
 
 function solution(arr){
-    
+    let answer = 0;
+    let m = arr.length;
+    let n = arr[0].length;
+    // (멘토, 멘티) 가 될 수 있는 경우의 수 4*4;
+    for (let i = 1; i <= n; i++){
+        for (let j = 1; j <= n; j++) {
+            let cnt = 0;
+            // 테스트 횟수
+
+            for (let k = 0; k < m; k++) {
+                // pi 멘토 테스트 결과의 등수
+                // pi 멘티 테스트 결과의 등수
+                let pi = pj = 0;
+
+
+                // 테스트 결과 안의 등수
+                for (let s = 0; s < n; s++) {
+                    if(arr[k][s]===i){
+                        pi = s;
+                    }
+                    if (arr[k][s]===j) {
+                        pj = s;
+                    }
+                    
+                }
+
+                if(pi < pj) cnt ++
+            }
+            if(cnt === m){
+                answer ++;
+            }
+        }
+    }
     return answer;
 }
 
-let arr=[[3, 4, 1, 2], [4, 3, 2, 1], [3, 1, 4, 2]];
+let arr=[
+    [3, 4, 1, 2], 
+    [4, 3, 2, 1], 
+    [3, 1, 4, 2]
+];
 console.log(solution(arr));
