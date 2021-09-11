@@ -19,3 +19,5 @@ function solution(n){
 }
 
 solution(3);
+
+// DFS 는 스택 구조 ;
