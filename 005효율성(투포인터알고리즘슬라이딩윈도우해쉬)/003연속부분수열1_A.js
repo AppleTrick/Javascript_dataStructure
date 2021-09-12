@@ -15,12 +15,17 @@ N개의 수로 이루어진 수열이 주어집니다.
 
 function solution(m, arr){
 
-    let answer = 0; lt = 0; sum = 0;
+    let answer = 0; 
+    let lt = 0; 
+    let sum = 0;
+
+    // rt 증가
     for (let rt = 0; rt < arr.length; rt++) {
         sum += arr[rt];
         if(sum === m ){
             answer++
         }
+        // 크거가 같을 경우 lt 실행하여 빼기 실행
         while(sum >= m){
             sum -= arr[lt++];
             if (sum===m) {
