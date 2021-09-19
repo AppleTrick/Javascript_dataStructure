@@ -27,3 +27,6 @@ function solution(s){
 
 let str="352+*9-";
 console.log(solution(str));
+
+
+// 내머리가 빠가다... 좀더 생각하고 풀어보자...
