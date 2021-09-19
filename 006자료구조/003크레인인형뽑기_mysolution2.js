@@ -2,24 +2,25 @@
 function solution(board, moves){       
     let answer = 0;
     let stack = [];
-    let n = board.length;
-    for (const x of moves) {
-        for (let i = 0; i < n; i++) {
-            if (board[i][x-1] !== 0) {
-                stack.push(board[i][x-1]);
-                board[i][x-1] = 0;
+    
+    moves.forEach(pos => {
+        for(let i=0; i < board.length; i++){
+            if(board[i][pos-1] != 0){ // 인형을 만날경우
+                let tmp = board[i][pos-1];
+                board[i][pos-1] = 0;
 
-                if (stack[stack.length - 1] === stack[stack.length -2]) {
+                if(tmp === stack[stack.length-1]){
                     stack.pop();
-                    stack.pop();
-                    answer += 2;
+                    answer+=2;
+                }else{
+                    stack.push(tmp);
                 }
-
-                break;
+                
+                break; // 한번햇으면 종료
             }
         }
-    }
-    // console.log(stack);
+    });
+
     return answer;
 }
 
@@ -33,3 +34,4 @@ let a=[
 
 let b=[1, 5, 3, 5, 1, 2, 1, 4];
 console.log(solution(a, b));
+
