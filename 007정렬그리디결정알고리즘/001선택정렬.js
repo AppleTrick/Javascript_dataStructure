@@ -7,19 +7,19 @@ N개이 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프�
 있습니다.*/
 
 function solution(arr){
-    let answer=arr;
+    let answer = arr;
     // 얕은 복사 => answer 도 arr 을 가르킨다.
 
-    for(let i=0; i<arr.length; i++){
-        let idx = i; // idx의 최솟값의 위치
+    for (let i = 0; i < arr.length - 1; i++) {
+        let idx = i;
         for (let j = i+1; j < arr.length; j++) {
             if(arr[j] < arr[idx]){
                 idx = j;
             }
-            [arr[i], arr[idx]] = [arr[idx], arr[i]]; // 최신 자바스크립트 함수
         }
-       
-    } 
+        [arr[i], arr[idx]] = [arr[idx], arr[i]];
+        
+    }
     return answer;
 }
 
