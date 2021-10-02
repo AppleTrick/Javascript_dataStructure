@@ -21,7 +21,7 @@ function solution(size, arr){
             }
         }
 
-        answer[0] = element
+        answer[0] = element;
         console.log(answer);
     });
 

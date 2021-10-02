@@ -5,6 +5,7 @@ function solution(size, arr){
     let answer = [];
     arr.forEach(element => {
         let pos = -1;
+        
         for (let i = 0; i < size; i++) {
             if(element === answer[i]){
                 pos = i; // hit or miss 확인
