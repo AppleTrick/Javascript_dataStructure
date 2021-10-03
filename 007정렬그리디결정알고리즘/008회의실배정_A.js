@@ -16,7 +16,9 @@ function solution(meeting){
             return a[1]-b[1]
         };
     });
+
     let set = 0;
+    
     for (const x of meeting) {
         if(x[0] >= set){
             answer++;
