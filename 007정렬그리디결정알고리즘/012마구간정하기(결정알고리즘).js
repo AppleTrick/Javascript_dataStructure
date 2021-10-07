@@ -10,15 +10,42 @@ C마리의 말을 N개의 마구간에 배치했을 때 가장 가까운 두 말
 ▣ 입력설명 첫 줄에 자연수 N(3<=N<=200,000)과 C(2<=C<=N)이 공백을 사이에 두고 주어집니다. 둘째 줄에 마구간의 좌표 xi(0<=xi<=1,000,000,000)가 차례로 주어집니다.
 */
 
+function count(stable, dist){
+    let cnt = 1;
+    let ep = stable[0];
+    for(let i = 1; i<stable.length; i++){
+        if(stable[i]-ep >= dist){
+            cnt++
+            ep = stable[i];
+        }
+    }
+    return cnt;
+}
+
 function solution(c, stable){
+
+    let answer;
+    // 정렬
     stable.sort((a,b) => {
         return a-b;
     })
 
-    console.log(stable);
-    let answer;
     let lt = 1;
-    let rt = stable.length;
+    let rt = stable[stable.length-1];
+
+    while(lt <= rt){
+        let mid = parseInt((lt + rt)/2);
+        if (count(stable, mid) >= c) {
+            answer = mid;
+            lt = mid+1;
+        }
+        else {
+            rt = mid -1;
+        }
+    }
+
+    return answer;
+    
 
 
  }
