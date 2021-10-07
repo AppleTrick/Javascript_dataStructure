@@ -6,16 +6,16 @@
 
 function solution(n){
 
-    function DFS(L){
-        if(L==0){
-            return;
+    function DFS(n){
+        if (n !== 1) {
+            DFS(n-1);
+            console.log(n);
         }else{
-            console.log(L);
-            DFS(L-1)
+            console.log(n);
         }
     }
 
-    DFS(n)
+    DFS(n);
 }
 
 solution(3);
