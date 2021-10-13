@@ -25,7 +25,7 @@ function solution(arr){
         if(L === n){ // 종착점일때
             if((total - sum) === sum){
                 answer = "YES"
-                flag = 1;
+                flag = 1; // 원소가 많아질경우 매우 중요해짐
             }
         }else{
             DFS(L+1, sum + arr[L]);
