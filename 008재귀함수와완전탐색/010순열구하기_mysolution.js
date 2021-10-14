@@ -22,7 +22,8 @@ function solution(m, arr){
                }
             }
             answer.push(answerTemp);
-            answer1.push([...tmp]);
+            // answer1.push([...tmp]);
+            // 주소값 참조로 인해 마지막에 모든 값이 [0,0,0] 인경우를 가지게 되서 tmp가 제대로 복사 되지 않는다.
             
         }else{
             for (let i = 0; i < tmp.length; i++) {
@@ -39,7 +40,7 @@ function solution(m, arr){
 
     DFS(0, tmp);
 
-    console.log(answer1);
+    // console.log(answer1);
 
     return answer;
 }
