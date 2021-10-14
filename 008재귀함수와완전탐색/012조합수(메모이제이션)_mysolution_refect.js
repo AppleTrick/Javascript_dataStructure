@@ -15,30 +15,21 @@
 
 function solution(n, r){ 
     let answer;
+
     let val = 1;    
+
     function DFS(n,r){
         if(n<r){
-            return;
+            return 1;
         }else{
-            val = val*n
-            DFS(n-1,r)
-            console.log(`n의값 :  ${n}  val의 값 : ${val}`); 
-            // 결국 스택 구조로 됨 값을 정확히 리턴하려면 조건에 달성했을때 값을 넘기는 방법이 필요함
+            return n * DFS(n-1,r)
         }
     }
-    DFS(n,r)
-    let temp1 = val;
-    val = 1;
-    DFS(r,1);
-    let temp2 = val;
-    answer = temp1 / temp2;
+    answer = DFS(n,r) / DFS(r,1)
+
     return answer;
 }
 
 console.log(solution(5, 3));
 
 
-/*
-재귀 함수를 사용했을 때의 단점
-위에서 살펴봤듯이 재귀 함수를 사용하면 함수의 호출이 스택에 차곡 차곡 쌓이게 되고, 위에서부터 차례대로 값을 반환하기 전에는 계속 메모리 공간을 차지하고 있다. 그렇기 때문에 호출 스택이 너무 커져서 메모리를 엄청나게 소비할 수도 있다. 이러한 이유 때문에 재귀를 사용하는 것보다 반복문을 사용했을 때 더 성능이 좋은 경우가 많다. 그러므로 상황에 따라 적절한 방법을 골라서 사용할 수 있어야 한다.
-*/
