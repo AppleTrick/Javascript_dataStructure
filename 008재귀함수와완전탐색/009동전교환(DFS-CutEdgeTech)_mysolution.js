@@ -9,3 +9,28 @@
 ▣ 출력설명
 첫 번째 줄에 거슬러 줄 동전의 최소개수를 출력한다.
 */
+
+function solution(m, arr){
+    let answer = Number.MAX_SAFE_INTEGER;
+
+    function DFS(L, n){
+        if(n < 0){
+            return;
+        }
+        if(n === 0){
+            console.log(L, n);
+            answer = Math.min(answer, L);
+        }else{
+            for (let i = 0; i < arr.length; i++) {
+                DFS(L+1, n - arr[i]);
+            }
+        }
+    }
+    
+    DFS(0 , m);
+    
+    return answer;
+}
+
+let arr=[1, 2, 5];
+console.log(solution(15, arr));
