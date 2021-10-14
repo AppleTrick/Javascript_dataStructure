@@ -32,4 +32,6 @@ function solution(n, r){
 
 console.log(solution(5, 3));
 
+// 총평 생각이 엄청 닫혀 있엇음 리턴을 통해 값을 else 에서도 리턴하는 방법만 알면 됫는데 개 뻘짓함
+
 
