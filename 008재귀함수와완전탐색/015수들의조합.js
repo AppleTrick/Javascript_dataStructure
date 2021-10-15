@@ -17,13 +17,18 @@ function solution(n, k, arr, m){
     // k 는 뽑는 개수
     // arr은 주어진 배열
     // m 의 어떤 배수의 값?
-    let answer=0;
-    function DFS(L, s, sum){
-        if( L > k){
 
+    let answer=0;
+
+    function DFS(L, s, sum){    // 
+        if( L === k){
+            if(sum % m===0){
+                answer++
+                console.log(answer, sum);
+            }
         }else{
-            for (let i = 0; i < n; i++) {
-                DFS(L+1,s+1, sum+arr[i])
+            for (let i = s; i < n; i++) {
+                DFS(L+1, i+1, sum+arr[i])
             }    
         }
     }
