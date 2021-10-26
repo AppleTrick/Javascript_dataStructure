@@ -19,12 +19,10 @@ function solution(arr){
     for(let i = 1; i < arr.length; i++){
         let max = 0;
         for(let j = i-1; j>=0; j--){
-            console.log("dy[j] " + dy[j] + " max 값 : " + max);
             if(arr[j] < arr[i] && dy[j] > max){
                 max = dy[j];
             }
         }
-        console.log("end");
         dy[i] = max + 1;
         answer = Math.max(answer,dy[i]);
     }
